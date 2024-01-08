@@ -1,8 +1,8 @@
 {
-  "id": "pf2e-compendium-builder",
-  "name": "Pathfinder 2e Character Builder",
-  "title": "Pathfinder 2e Character Builder",
-  "description": "Uses existing character sheet and add additions to help create a Pathfinder 2e Character. Such as a tutorial, key information added to sheet to guide user, additional tab on compendium, and a spell generator design against different classes",
+  "id": "pf2e-compendium-plus",
+  "name": "Pathfinder 2e Compendium Enhancer",
+  "title": "Pathfinder 2e Compendium Enhancer",
+  "description": "Expands Pathfinder Compendium Browser to include Dieties and Sub Classes",
   "authors": [
       {
           "name": "Jeffrey Pina",
@@ -19,9 +19,7 @@
     "maximum": 11
   },
   "esmodules": [
-    "scripts/module.mjs",
-    "scripts/spellbuilder.mjs",
-    "scripts/tutorial.mjs"
+    "scripts/module.mjs"
   ],
   "styles": [
     "styles/module.css"
