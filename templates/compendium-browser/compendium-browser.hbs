@@ -1,20 +1,21 @@
-<div class="content-box">
+<div class="content-box" data-tooltip-class="pf2e">
     <nav data-group="primary">
         <a data-tab="landing-page" style="display:none"></a>
-        <a data-tab="action">{{localize "PF2E.CompendiumBrowser.TabAction"}}</a>
+        <a data-tab="action">{{localize "PF2E.Item.Action.Plural"}}</a>
         {{#if user.isGM}}
             <a data-tab="bestiary">{{localize "PF2E.CompendiumBrowser.TabBestiary"}}</a>
         {{/if}}
-        <a data-tab="equipment">{{localize "PF2E.CompendiumBrowser.TabEquipment"}}</a>
+        <a data-tab="equipment">{{localize "TYPES.Item.equipment"}}</a>
         <a data-tab="feat">{{localize "PF2E.CompendiumBrowser.TabFeat"}}</a>
         {{#if user.isGM}}
-            <a data-tab="hazard">{{localize "PF2E.CompendiumBrowser.TabHazard"}}</a>
+            <a data-tab="hazard">{{localize "PF2E.Actor.Hazard.Plural"}}</a>
         {{/if}}
-        <a data-tab="spell">{{localize "PF2E.CompendiumBrowser.TabSpell"}}</a>
+        <a data-tab="spell">{{localize "PF2E.Item.Spell.Plural"}}</a>
         <a data-tab="heritage">Heritage</a>{{!--  Heritage</a>Added by JCP --}}
-        <a data-tab="deity">Deity</a>{{!--  Deity</a>Added by JCP --}}
+        <a data-tab="deity">Deity</a>{{!--  Deity Added by JCP --}}
+        <a data-tab="background">Background</a>{{!--  Background Added by JCP --}}
         {{#if user.isGM}}
-            <a data-tab="settings">{{localize "PF2E.CompendiumBrowser.TabSettings"}}</a>
+            <a data-tab="settings">{{localize "DOCUMENT.Settings"}}</a>
         {{/if}}
     </nav>
     <section class="content">
@@ -81,7 +82,7 @@
         {{/with}}
 
 
-        {{!-- Added by JCP --}}
+        {{!-- Added by JCP --}} 
         {{#with heritage}}
             <div class="tab browser active" data-group="primary" data-tab="heritage">
                 <div class="spell-browser">
@@ -98,13 +99,21 @@
                 </div>
             </div>
         {{/with}}  
+        {{#with background}}
+            <div class="tab browser active" data-group="primary" data-tab="background">
+                <div class="spell-browser">
+                    {{> "systems/pf2e/templates/compendium-browser/filters.hbs"}}
+                    <ul class="item-list result-list"></ul>
+                </div>
+            </div>
+        {{/with}}  
         {{!-- Added by JCP --}}
 
 
         {{#if user.isGM}}
             {{#with settings}}
                 <div class="tab settings" data-group="primary" data-tab="settings">
-                    {{> "systems/pf2e/templates/compendium-browser/browser-settings.hbs"}}
+                    {{> "systems/pf2e/templates/compendium-browser/settings/settings.hbs"}}
                 </div>
             {{/with}}
         {{/if}}
